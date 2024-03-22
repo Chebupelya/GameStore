@@ -1,0 +1,20 @@
+.Logo {
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+        text-decoration: none;
+    }
+
+    img {
+        width: 2em;
+        aspect-ratio: 1/1;
+    }
+
+    span {
+        color: var(--color-primary);
+        font-size: 1.5em;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,25 @@
+.MenuButton {
+    $size: 3em;
+
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    min-width: $size;
+    min-height: $size;
+
+    width: $size;
+    height: $size;
+
+    .ImageOpened, 
+    .ImageClosed {
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s linear;
+    }
+
+    .ImageClosed {
+        transform: rotate(90deg);
+    }
+}

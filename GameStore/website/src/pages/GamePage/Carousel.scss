@@ -1,0 +1,41 @@
+.carousel-root {
+    user-select: none;
+
+    li {
+        cursor: pointer;
+    }
+
+    .slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        border-radius: 0.5em;
+    }
+
+    .slide img {
+        border-radius: 0.5em;
+    }
+
+    .thumb {
+        border-radius: 1em;
+        border-color: var(--color-text);
+
+        &:hover {
+            border-color: white;
+        }
+
+        &.selected {
+            border-color: var(--color-primary);
+        }
+    }
+
+    .thumbs-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        
+        .thumbs {
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'SignateGrotesk';
+    src: url('../public/fonts/signategrotesk-black.ttf');
+}
+
+
+@font-face {
+    font-family: 'Meie';
+    src: url(../public/fonts/Meie.ttf);
+}
+
+
+:root {
+    --color-primary: #91c733;
+    --color-secondary: #444939;
+    --color-text: #A8AD9B;
+    --color-bg: #232323;
+
+    --font-primary: 'SignateGrotesk';
+}
+
+
+html, body {
+    margin: 0;
+
+    max-height: 100dvh;
+
+    color: var(--color-text);
+    background-color: var(--color-bg);
+
+    font-size: 16px;
+    font-family: var(--font-primary);
+    letter-spacing: 0.2ch;
+}
+
+#root {
+    height: 100dvh;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+    border-radius: 20px;
+    border: 7.5px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary);
+}

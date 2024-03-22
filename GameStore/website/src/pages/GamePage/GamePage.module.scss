@@ -1,0 +1,334 @@
+.GamePage {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    
+    & > * {
+        position: sticky;
+        z-index: 1;
+    }
+
+    .Cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            border-radius: 1em;
+
+            &.Mobile {
+                display: none;
+            }
+
+            &.Desctop {
+                display: block;
+            }
+
+            @media (max-width: 769px) {
+                &.Mobile {
+                    display: block;
+                }
+
+                &.Desctop {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 426px) {
+                &.Mobile {
+                    display: none;
+                }
+            }
+        }
+
+        .CoverFilter {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(35, 35, 35, 1) 10%, rgba(35, 35, 35, 0.7) 100%);
+
+            @media (max-width: 769px) {
+                backdrop-filter: blur(2px);
+            }
+        }
+    }
+
+    .Head {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2em;
+
+        padding: 1em;
+        padding-top: 2em;
+        min-width: min(300px, 100%);
+
+        @media (max-width: 769px) {
+            padding: 0;
+            padding-top: 2em;
+
+            .GameInfo {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 426px) {
+            padding-top: 0;
+        }
+
+        .Poster {
+            max-width: min(100%, 18em);
+            height: fit-content;
+            flex-shrink: 1;
+            border-radius: 0.5em;
+        }
+
+        .GameInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+
+            .Title {
+                text-align: center;
+                margin: 0;
+                color: white;
+                word-wrap: break-word;
+                width: fit-content;
+                max-width: 500px;
+            }
+
+            .Price {
+                color: var(--color-primary);
+            }
+
+            .Info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-shrink: 1;
+                width: 100%;
+
+                @media (max-width: 426px) {
+                    align-items: flex-start;
+                }
+
+
+                table {
+                    border-spacing: 0 0.5em;
+                    width: 100%;
+                    min-width: 370px;
+                    max-width: 500px;
+                    font-size: 1.2em;
+
+                    @media (max-width: 768px) {
+                        min-width: 0;
+                    }
+
+                    @media (max-width: 426px) {
+                        tbody {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1em;
+                        }
+
+                        th, td {
+                            max-width: 100% !important;
+                            display: block;
+                            text-align: left !important;
+                        }
+                    }
+
+                    th {
+                        color: #696c63;
+                        text-align: left;
+                    }
+
+                    td {
+                        text-align: right;
+                    }
+                    
+                    th, td:not([data-fake]) {
+                        max-width: 80px;
+                        padding: 0.3em;
+                    }
+
+                    td[data-fake] {
+                        min-width: 1em;
+                    }
+
+                    tr {
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    tr:hover {
+                        background-color: rgba(0, 0, 0, 0.5);
+                        scale: 1.05;
+                    }
+                }
+            }
+        }
+    }
+
+    .Controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1em;
+
+        padding: 1.5em 0;
+
+        & > button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1ch;
+
+            cursor: pointer;
+            padding: 0.5em;
+            border-radius: 0.5em;
+            border-width: 0.15em;
+
+            font-size: 1.1em;
+            font-family: var(--font-primary);
+
+            background-color: transparent;
+
+            transition: all 0.2s ease-in-out;
+
+            img {
+                width: 1.5em;
+                aspect-ratio: 1/1;
+            }
+
+            span {
+                text-align: left;
+            }
+        }
+
+        .BuyButton {
+            $color: var(--color-primary);
+
+            color: $color;
+            border-color: $color;
+
+            &:hover {
+                color: white;
+                background-color: $color;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        .AddCartButton {
+            $color: #009bce;
+
+            color: $color;
+            border-color: $color;
+
+            &:hover {
+                color: white;
+                background-color: $color;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        .RemoveCartButton {
+            $color: #ff4242;
+
+            color: $color;
+            border-color: $color;
+
+            &:hover {
+                color: white;
+                background-color: $color;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        .AddWishlistButton {
+            $color: white;
+
+            color:  $color;
+            border-color: $color;
+
+            &:hover {
+                color: black;
+                background-color: $color;
+
+                img {
+                    filter: brightness(1) invert(1);
+                }
+            }
+        }
+
+        .RemoveWishlistButton {
+            $color: #ff4242;
+
+            color:  $color;
+            border-color: $color;
+
+            &:hover {
+                color: white;
+                background-color: $color;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+
+    .Description {
+        p {
+            text-indent: 5ch;
+            text-align: justify;
+            hyphens: auto;
+        }
+    }
+}
+
+
+.FullScreenSlider {
+    pointer-events:all;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+
+    &[data-opened="false"] {
+        display: none;
+    }
+
+    .Carousel {
+        width: 80vw;
+    }
+}

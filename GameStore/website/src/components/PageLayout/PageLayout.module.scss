@@ -1,0 +1,50 @@
+.PageLayout {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1000px;
+    height: 100dvh;
+
+    margin: auto;
+
+    .PageContainer {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        height: 100%;
+
+        padding: 0 1em;
+
+        .PageContent {
+            flex-grow: 1;
+        }
+    }
+}
+
+
+.AuthError {
+    max-width: 600px;
+    margin: 30vh auto;
+
+    h1 {
+        text-align: center;
+    }
+
+    h3 {
+        hyphens: auto;
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        
+            &:hover,
+            &:active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
